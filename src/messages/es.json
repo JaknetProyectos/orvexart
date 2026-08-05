@@ -1,0 +1,324 @@
+{
+  "cartPage": {
+    "breadcrumb": {
+      "home": "Inicio",
+      "summary": "1. Revisión",
+      "shippingPayment": "2. Entrega y Pago"
+    },
+    "success": {
+      "title": "¡Transacción Completada Exitosamente!",
+      "description": "Tu pago ha sido autorizado. El entorno cloud de tu plan de hosting ya está en fase de configuración para su activación.",
+      "paymentReference": "Referencia de Pago:",
+      "paidAmount": "Monto Liquidado:",
+      "transactionStatus": "Estado del Pago:",
+      "approved": "AUTORIZADA",
+      "backToCatalog": "Regresar al Catálogo"
+    },
+    "empty": {
+      "title": "Tu cesta de compras está vacía",
+      "description": "No se detectaron servicios de hosting guardados en tu sesión de navegación actual.",
+      "goToStore": "Ver el Catálogo"
+    },
+    "order": {
+      "title": "Productos en tu orden",
+      "clear": "Eliminar Planes"
+    },
+    "financial": {
+      "title": "Resumen de Cuenta",
+      "couponPlaceholder": "Código promocional",
+      "applyCoupon": "Aplicar",
+      "appliedCoupon": "Cupón {code} (-{discount}%)",
+      "remove": "Quitar",
+      "couponInvalid": "El código de descuento no es válido o ya expiró.",
+      "subtotal": "Subtotal de Productos:",
+      "discount": "Descuento Obtenido:",
+      "netTotal": "Monto Neto a Liquidar:",
+      "tax": "IVA {tax}"
+    },
+    "actions": {
+      "proceedToPayment": "Avanzar al Pago",
+      "processing": "Validando Transacción por medio de Etomin...",
+      "payAmount": "Pagar {amount}",
+      "backToCart": "Modificar pedido / Modificar cupón"
+    },
+    "errors": {
+      "declined": "El cargo fue denegado por el banco emisor.",
+      "connection": "Se experimentó un problema de enlace con el procesador de pagos."
+    },
+    "metadata": {
+      "couponApplied": "Cupón de descuento activo",
+      "standardSale": "Adquisición digital convencional"
+    },
+    "form": {
+      "buyerTitle": "Datos de Facturación / Comprador",
+      "addressTitle": "Información de Contacto y Activación",
+      "paymentTitle": "Pasarela de Cobro Encriptada",
+      "firstName": "Nombre(s) *",
+      "lastName": "Apellidos *",
+      "email": "Correo electrónico *",
+      "phone": "Teléfono Móvil (10 posiciones) *",
+      "company": "Empresa (Opcional)",
+      "streetAddress": "Vía pública, Número Exterior y Número Interior *",
+      "streetAddressPlaceholder": "Av. Universidad 450, Int 4",
+      "neighborhood": "Colonia / Entre Calles (Opcional)",
+      "neighborhoodPlaceholder": "Col. Vértiz Narvarte",
+      "city": "Alcaldía o Localidad *",
+      "state": "Provincia / Estado *",
+      "statePlaceholder": "CDMX",
+      "postalCode": "Código Postal *",
+      "country": "Territorio",
+      "mexico": "México (MX)",
+      "cardNumber": "Número de Tarjeta (Visa / Mastercard) *",
+      "cardNumberPlaceholder": "4152 0000 0000 0000",
+      "cardHolderName": "Titular de la Tarjeta *",
+      "cardHolderPlaceholder": "Tal como aparece en la tarjeta",
+      "expiryMonth": "Mes Exp. (MM) *",
+      "expiryMonthPlaceholder": "05",
+      "expiryYear": "Año Exp. (AA) *",
+      "expiryYearPlaceholder": "29",
+      "cvv": "Código de Verificación (CVV) *",
+      "cvvPlaceholder": "•••"
+    },
+    "security": {
+      "note": "Proceso gestionado bajo estándares de seguridad"
+    },
+    "images": {
+      "etominAlt": "Etomin",
+      "securePaymentAlt": "Pago seguro"
+    }
+  },
+  "customPlan": {
+    "hero": {
+      "badge": "Panel de Usuarios",
+      "title": "Añadir presupuesto personalizado"
+    },
+    "imageAlt": "Logo de Orvex.art",
+    "authorized": {
+      "title": "Cobro verificado",
+      "description": "Introduce la clave de cotización y el monto previamente validado con nuestra área comercial para avanzar con la facturación."
+    },
+    "form": {
+      "badge": "Checkout a la medida",
+      "title": "Detalles del presupuesto",
+      "quoteLabel": "Clave de cotización",
+      "quotePlaceholder": "Ej. NEX-2026-001",
+      "amountLabel": "Cifra acordada",
+      "amountPlaceholder": "0.00",
+      "taxNote": "+ El impuesto correspondiente en el siguiente paso."
+    },
+    "buttons": {
+      "adding": "Sumando a la cesta...",
+      "addToCart": "Añadir a la cesta"
+    },
+    "errors": {
+      "quoteRequired": "Es necesario proporcionar un identificador de cotización válido.",
+      "invalidAmount": "Es necesario indicar una cifra financiera válida."
+    }
+  },
+  "header": {
+    "logoAlt": "Orvex.art",
+    "topbar": {
+      "address": "Boulevard Periférico Manuel Ávila Camacho 235, CDMX",
+      "tagline": "Equipo de cómputo y gaming"
+    },
+    "search": {
+      "placeholderDesktop": "Buscar hardware, periféricos...",
+      "placeholderMobile": "Buscar productos...",
+      "search": "Buscar",
+      "clear": "Limpiar búsqueda",
+      "open": "Abrir búsqueda",
+      "searching": "Buscando productos...",
+      "results": "{count} resultado(s)",
+      "clearButton": "Limpiar",
+      "noResults": "No se encontraron productos para “{query}”."
+    },
+    "cart": {
+      "label": "Carrito"
+    },
+    "menu": {
+      "open": "Abrir menú"
+    },
+    "nav": {
+      "shipping": "Paga tu Envío",
+      "contact": "Contáctanos"
+    }
+  },
+  "heroSlider": {
+    "slides": {
+      "1": {
+        "title": "Más Velocidad",
+        "subtitle": "Memorias de alto rendimiento para setups exigentes.",
+        "buttonText": "Ver Memorias"
+      },
+      "2": {
+        "title": "ASUS TUF Gaming",
+        "subtitle": "Monitores rápidos, fluidos y preparados para competir.",
+        "buttonText": "Ver Monitores"
+      },
+      "3": {
+        "title": "RTX Series",
+        "subtitle": "Potencia gráfica con nueva generación NVIDIA GeForce.",
+        "buttonText": "Ver Gráficas"
+      }
+    },
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "goToSlide": "Ir al slide {slide}"
+    }
+  },
+  "newProducts": {
+    "title": "Nuevos Productos",
+    "subtitle": "Hardware y periféricos recién agregados.",
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Siguiente"
+    }
+  },
+  "categories": {
+    "title": "Categorías",
+    "subtitle": "Componentes, periféricos y hardware especializado."
+  },
+  "features": {
+    "items": {
+      "1": {
+        "title": "Los mejores precios",
+        "description": "Precios competitivos en hardware y periféricos."
+      },
+      "2": {
+        "title": "Entrega rápida",
+        "description": "Envíos ágiles y seguros para todo México."
+      },
+      "3": {
+        "title": "Protección al comprador",
+        "description": "Garantía y respaldo en cada compra."
+      },
+      "4": {
+        "title": "Atención en vivo",
+        "description": "Soporte disponible para resolver tus dudas."
+      }
+    }
+  },
+  "footer": {
+    "logoAlt": "Orvex.art",
+    "description": "Hardware, periféricos y componentes con enfoque en rendimiento, estética y confiabilidad. Compra segura con soporte real.",
+    "featured": "Destacados",
+    "currency": "MXN",
+    "paymentMethodAlt": "Método de pago",
+    "copyright": "Todos los derechos reservados.",
+    "navigation": {
+      "title": "Navegación",
+      "home": "Inicio",
+      "store": "Tienda",
+      "shipping": "Paga tu Envío",
+      "contact": "Contáctanos"
+    },
+    "legal": {
+      "privacy": "Aviso de Privacidad",
+      "terms": "Términos de Venta y Condiciones Comerciales",
+      "returns": "Política de Devoluciones y Garantías"
+    }
+  },
+  "categoryPage": {
+    "breadcrumb": {
+      "home": "Inicio"
+    },
+    "availableProducts": "{count} productos disponibles",
+    "emptyState": {
+      "message": "No hay productos en esta categoría.",
+      "backHome": "Volver al inicio"
+    }
+  },
+  "productDetail": {
+    "breadcrumb": {
+      "home": "Inicio"
+    },
+    "notFound": {
+      "title": "Producto no encontrado",
+      "backHome": "Volver al inicio"
+    },
+    "priceLabel": "MXN + IVA",
+    "specifications": "Especificaciones",
+    "quantity": "Cantidad",
+    "addToCart": "Agregar al carrito"
+  },
+  "contact": {
+    "hero": {
+      "title": "Hablemos de tu",
+      "subtitle": "próximo setup",
+      "description": "Nuestro equipo puede ayudarte con cotizaciones, compatibilidad, hardware, soporte y soluciones empresariales."
+    },
+    "cards": {
+      "phone": {
+        "title": "Teléfono"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "address": {
+        "title": "Dirección"
+      }
+    },
+    "form": {
+      "badge": "Contacto Directo",
+      "title": "Envíanos un mensaje",
+      "subtitle": "Responderemos lo antes posible.",
+      "success": {
+        "title": "¡Mensaje enviado!",
+        "text": "Te responderemos lo antes posible."
+      },
+      "fields": {
+        "name": {
+          "label": "Nombre",
+          "placeholder": "Tu nombre"
+        },
+        "lastname": {
+          "label": "Apellidos",
+          "placeholder": "Tus apellidos"
+        },
+        "subject": {
+          "label": "Asunto",
+          "placeholder": "Asunto del mensaje"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "tu@email.com"
+        },
+        "phone": {
+          "label": "Teléfono",
+          "placeholder": "+ 52 1 55 5359 9895"
+        },
+        "message": {
+          "label": "Mensaje",
+          "placeholder": "¿En qué podemos ayudarte?"
+        }
+      },
+      "send": "Enviar mensaje",
+      "sending": "Enviando..."
+    },
+    "alert": {
+      "error": {
+        "title": "Error",
+        "defaultMessage": "Ocurrió un error al enviar el mensaje"
+      }
+    }
+  },
+  "ProductCard": {
+    "tax": "+ IVA",
+    "price": "Precio",
+    "added" : "Producto agregado al carrito."
+  },
+  "store": {
+    "title": "Catálogo de",
+    "titleAccent": "Productos",
+    "description": "Explora soluciones tecnológicas de alto rendimiento. Filtrado inteligente integrado.",
+    "searchPlaceholder": "Buscar por nombre de producto...",
+    "allCategories": "Todas las Categorías",
+    "resultSingular": "PRODUCTO ENCONTRADO",
+    "resultPlural": "PRODUCTOS ENCONTRADOS",
+    "noResultsTitle": "Sin resultados",
+    "noResultsDescription": "No hay productos que coincidan con los criterios actuales de búsqueda o filtro. Prueba restableciendo los campos o intentando un término diferente.",
+    "loading": "Cargando catálogo...",
+    "error": "Ocurrió un error al cargar el catálogo de productos."
+  }
+}

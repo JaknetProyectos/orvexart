@@ -1,0 +1,324 @@
+{
+  "cartPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "summary": "1. Review",
+      "shippingPayment": "2. Delivery and Payment Details"
+    },
+    "success": {
+      "title": "Payment Authorized Successfully!",
+      "description": "Your transaction has been approved. Your cloud hosting plan configuration is currently being processed for immediate activation.",
+      "paymentReference": "Payment ID:",
+      "paidAmount": "Total Paid:",
+      "transactionStatus": "Transaction State:",
+      "approved": "APPROVED",
+      "backToCatalog": "Return to Catalog"
+    },
+    "empty": {
+      "title": "Your shopping cart is empty",
+      "description": "We could not find any hosting services or plans selected in your current browsing session.",
+      "goToStore": "View Catalog"
+    },
+    "order": {
+      "title": "Products in Your Order",
+      "clear": "Remove Plans"
+    },
+    "financial": {
+      "title": "Account Summary",
+      "couponPlaceholder": "Promo code",
+      "applyCoupon": "Validate",
+      "appliedCoupon": "Promo {code} (-{discount}%)",
+      "remove": "Delete",
+      "couponInvalid": "The discount code you entered is invalid or has expired.",
+      "subtotal": "Subtotal amount:",
+      "discount": "Discount applied:",
+      "netTotal": "Net Balance Due:",
+      "tax": "VAT {tax}"
+    },
+    "actions": {
+      "proceedToPayment": "Continue to Payment Form",
+      "processing": "Checking Funds through Etomin...",
+      "payAmount": "Authorize {amount}",
+      "backToCart": "Edit my order / Modify coupon"
+    },
+    "errors": {
+      "declined": "The charge was rejected by the card issuer.",
+      "connection": "A communication error occurred with the payment platform."
+    },
+    "metadata": {
+      "couponApplied": "Promo code active",
+      "standardSale": "Standard digital purchase"
+    },
+    "form": {
+      "buyerTitle": "Purchaser / Billing Details",
+      "addressTitle": "Contact and Activation Details",
+      "paymentTitle": "Secured Payment Gateway",
+      "firstName": "First Name(s) *",
+      "lastName": "Last Name(s) *",
+      "email": "Email Address *",
+      "phone": "Cell Phone (10 digits) *",
+      "company": "Company Name (Optional)",
+      "streetAddress": "Street, Exterior No. and Interior No. *",
+      "streetAddressPlaceholder": "Av. Universidad 450, Apt 4",
+      "neighborhood": "Neighborhood / Intersections (Optional)",
+      "neighborhoodPlaceholder": "Vértiz Narvarte",
+      "city": "City *",
+      "state": "State / Province *",
+      "statePlaceholder": "Mexico City",
+      "postalCode": "ZIP / Postal Code *",
+      "country": "Country",
+      "mexico": "Mexico (MX)",
+      "cardNumber": "Card Number (Visa / Mastercard) *",
+      "cardNumberPlaceholder": "4152 0000 0000 0000",
+      "cardHolderName": "Cardholder Full Name *",
+      "cardHolderPlaceholder": "Exactly as shown on the card",
+      "expiryMonth": "Exp. Month (MM) *",
+      "expiryMonthPlaceholder": "05",
+      "expiryYear": "Exp. Year (YY) *",
+      "expiryYearPlaceholder": "29",
+      "cvv": "Security Code (CVV) *",
+      "cvvPlaceholder": "•••"
+    },
+    "security": {
+      "note": "Secured Transaction"
+    },
+    "images": {
+      "etominAlt": "Etomin",
+      "securePaymentAlt": "Safe transaction"
+    }
+  },
+  "customPlan": {
+    "hero": {
+      "badge": "User Dashboard",
+      "title": "Add tailored quotation"
+    },
+    "imageAlt": "Orvex.art logo",
+    "authorized": {
+      "title": "Payment verified",
+      "description": "Please provide the quotation number and the price previously agreed with our commercial team to proceed with your checkout."
+    },
+    "form": {
+      "badge": "Tailored checkout",
+      "title": "Quotation details",
+      "quoteLabel": "Quotation number",
+      "quotePlaceholder": "Ex. NEX-2026-001",
+      "amountLabel": "Agreed price",
+      "amountPlaceholder": "0.00",
+      "taxNote": "+ Corresponding VAT will be added on the following screen."
+    },
+    "buttons": {
+      "adding": "Placing in basket...",
+      "addToCart": "Add to basket"
+    },
+    "errors": {
+      "quoteRequired": "You must provide a valid quotation number.",
+      "invalidAmount": "You must enter a valid financial amount."
+    }
+  },
+  "header": {
+    "logoAlt": "Orvex.art",
+    "topbar": {
+      "address": "Boulevard Periférico Manuel Ávila Camacho 235, Mexico City",
+      "tagline": "Computers and gaming equipment"
+    },
+    "search": {
+      "placeholderDesktop": "Search hardware, peripherals...",
+      "placeholderMobile": "Search products...",
+      "search": "Search",
+      "clear": "Clear search",
+      "open": "Open search",
+      "searching": "Searching products...",
+      "results": "{count} result(s)",
+      "clearButton": "Clear",
+      "noResults": "No products found for “{query}”."
+    },
+    "cart": {
+      "label": "Cart"
+    },
+    "menu": {
+      "open": "Open menu"
+    },
+    "nav": {
+      "shipping": "Pay Your Shipping",
+      "contact": "Contact Us"
+    }
+  },
+  "heroSlider": {
+    "slides": {
+      "1": {
+        "title": "More Speed",
+        "subtitle": "High-performance memory for demanding setups.",
+        "buttonText": "View Memory"
+      },
+      "2": {
+        "title": "ASUS TUF Gaming",
+        "subtitle": "Fast, smooth monitors built for competition.",
+        "buttonText": "View Monitors"
+      },
+      "3": {
+        "title": "RTX Series",
+        "subtitle": "Next-generation graphics power with NVIDIA GeForce.",
+        "buttonText": "View Graphics Cards"
+      }
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next",
+      "goToSlide": "Go to slide {slide}"
+    }
+  },
+  "newProducts": {
+    "title": "New Products",
+    "subtitle": "Recently added hardware and peripherals.",
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "categories": {
+    "title": "Categories",
+    "subtitle": "Components, peripherals, and specialized hardware."
+  },
+  "features": {
+    "items": {
+      "1": {
+        "title": "Best Prices",
+        "description": "Competitive prices on hardware and peripherals."
+      },
+      "2": {
+        "title": "Fast Delivery",
+        "description": "Fast and secure shipping across Mexico."
+      },
+      "3": {
+        "title": "Buyer Protection",
+        "description": "Warranty and support with every purchase."
+      },
+      "4": {
+        "title": "Live Support",
+        "description": "Support available to answer your questions."
+      }
+    }
+  },
+  "footer": {
+    "logoAlt": "Orvex.art",
+    "description": "Hardware, peripherals, and components focused on performance, aesthetics, and reliability. Secure shopping with real support.",
+    "featured": "Featured Products",
+    "currency": "MXN",
+    "paymentMethodAlt": "Payment method",
+    "copyright": "All rights reserved.",
+    "navigation": {
+      "title": "Navigation",
+      "home": "Home",
+      "store": "Store",
+      "shipping": "Pay for Shipping",
+      "contact": "Contact Us"
+    },
+    "legal": {
+      "privacy": "Privacy Notice",
+      "terms": "Terms of Sale and Commercial Conditions",
+      "returns": "Returns and Warranty Policy"
+    }
+  },
+  "categoryPage": {
+    "breadcrumb": {
+      "home": "Home"
+    },
+    "availableProducts": "{count} products available",
+    "emptyState": {
+      "message": "There are no products in this category.",
+      "backHome": "Back to Home"
+    }
+  },
+  "productDetail": {
+    "breadcrumb": {
+      "home": "Home"
+    },
+    "notFound": {
+      "title": "Product not found",
+      "backHome": "Back to home"
+    },
+    "priceLabel": "MXN + VAT",
+    "specifications": "Specifications",
+    "quantity": "Quantity",
+    "addToCart": "Add to cart"
+  },
+  "contact": {
+    "hero": {
+      "title": "Let's talk about your",
+      "subtitle": "next setup",
+      "description": "Our team can help you with quotes, compatibility, hardware, support, and business solutions."
+    },
+    "cards": {
+      "phone": {
+        "title": "Phone"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "address": {
+        "title": "Address"
+      }
+    },
+    "form": {
+      "badge": "Direct Contact",
+      "title": "Send us a message",
+      "subtitle": "We will respond as soon as possible.",
+      "success": {
+        "title": "Message sent!",
+        "text": "We will get back to you as soon as possible."
+      },
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name"
+        },
+        "lastname": {
+          "label": "Last name",
+          "placeholder": "Your last name"
+        },
+        "subject": {
+          "label": "Subject",
+          "placeholder": "Message subject"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "you@email.com"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "+ 52 1 55 5359 9895"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "How can we help you?"
+        }
+      },
+      "send": "Send message",
+      "sending": "Sending..."
+    },
+    "alert": {
+      "error": {
+        "title": "Error",
+        "defaultMessage": "An error occurred while sending the message"
+      }
+    }
+  },
+  "ProductCard": {
+    "tax": "+ VAT",
+    "price": "Price",
+    "added" : "Prodduct added to cart."
+  },
+  "store": {
+    "title": "Product",
+    "titleAccent": "Catalog",
+    "description": "Explore high-performance technological solutions. Integrated intelligent filtering.",
+    "searchPlaceholder": "Search by product name...",
+    "allCategories": "All Categories",
+    "resultSingular": "PRODUCT FOUND",
+    "resultPlural": "PRODUCTS FOUND",
+    "noResultsTitle": "No results found",
+    "noResultsDescription": "There are no products that match your current search or filter criteria. Try resetting the fields or using a different term.",
+    "loading": "Loading catalog...",
+    "error": "An error occurred while loading the product catalog."
+  }
+}
