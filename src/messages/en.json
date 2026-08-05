@@ -1,232 +1,232 @@
 {
   "cartPage": {
     "breadcrumb": {
-      "home": "Home",
-      "summary": "1. Review",
-      "shippingPayment": "2. Delivery and Payment Details"
+      "home": "Main Page",
+      "summary": "1. Review Order",
+      "shippingPayment": "2. Shipping & Payment"
     },
     "success": {
-      "title": "Payment Authorized Successfully!",
-      "description": "Your transaction has been approved. Your cloud hosting plan configuration is currently being processed for immediate activation.",
-      "paymentReference": "Payment ID:",
-      "paidAmount": "Total Paid:",
-      "transactionStatus": "Transaction State:",
+      "title": "Transaction Completed Successfully",
+      "description": "Your payment has been approved. The cloud environment for your hosting service is now being configured for activation.",
+      "paymentReference": "Transaction Reference:",
+      "paidAmount": "Amount Settled:",
+      "transactionStatus": "Payment Status:",
       "approved": "APPROVED",
-      "backToCatalog": "Return to Catalog"
+      "backToCatalog": "Return to Store"
     },
     "empty": {
       "title": "Your shopping cart is empty",
-      "description": "We could not find any hosting services or plans selected in your current browsing session.",
-      "goToStore": "View Catalog"
+      "description": "No hosting services or plans were detected in your current session.",
+      "goToStore": "Explore Catalog"
     },
     "order": {
-      "title": "Products in Your Order",
-      "clear": "Remove Plans"
+      "title": "Selected Items",
+      "clear": "Clear Cart"
     },
     "financial": {
-      "title": "Account Summary",
-      "couponPlaceholder": "Promo code",
-      "applyCoupon": "Validate",
-      "appliedCoupon": "Promo {code} (-{discount}%)",
-      "remove": "Delete",
-      "couponInvalid": "The discount code you entered is invalid or has expired.",
-      "subtotal": "Subtotal amount:",
-      "discount": "Discount applied:",
-      "netTotal": "Net Balance Due:",
-      "tax": "VAT {tax}"
+      "title": "Order Summary",
+      "couponPlaceholder": "Enter discount code",
+      "applyCoupon": "Apply",
+      "appliedCoupon": "Discount {code} (-{discount}%)",
+      "remove": "Remove",
+      "couponInvalid": "The promotional code is invalid or has expired.",
+      "subtotal": "Items Subtotal:",
+      "discount": "Total Discount:",
+      "netTotal": "Final Amount Due:",
+      "tax": "Estimated Tax {tax}"
     },
     "actions": {
-      "proceedToPayment": "Continue to Payment Form",
-      "processing": "Checking Funds through Etomin...",
-      "payAmount": "Authorize {amount}",
-      "backToCart": "Edit my order / Modify coupon"
+      "proceedToPayment": "Proceed to Checkout",
+      "processing": "Verifying transaction via Etomin...",
+      "payAmount": "Pay {amount}",
+      "backToCart": "Modify items / Change promo code"
     },
     "errors": {
-      "declined": "The charge was rejected by the card issuer.",
-      "connection": "A communication error occurred with the payment platform."
+      "declined": "The transaction was declined by the card issuer.",
+      "connection": "Unable to establish a connection with the payment gateway."
     },
     "metadata": {
-      "couponApplied": "Promo code active",
-      "standardSale": "Standard digital purchase"
+      "couponApplied": "Promotional code active",
+      "standardSale": "Standard online purchase"
     },
     "form": {
-      "buyerTitle": "Purchaser / Billing Details",
-      "addressTitle": "Contact and Activation Details",
-      "paymentTitle": "Secured Payment Gateway",
-      "firstName": "First Name(s) *",
-      "lastName": "Last Name(s) *",
+      "buyerTitle": "Billing & Customer Information",
+      "addressTitle": "Contact & Delivery Details",
+      "paymentTitle": "Secure Payment Portal",
+      "firstName": "First Name *",
+      "lastName": "Last Name *",
       "email": "Email Address *",
-      "phone": "Cell Phone (10 digits) *",
+      "phone": "Mobile Phone (10 digits) *",
       "company": "Company Name (Optional)",
-      "streetAddress": "Street, Exterior No. and Interior No. *",
+      "streetAddress": "Street Address, Apt / Suite *",
       "streetAddressPlaceholder": "Av. Universidad 450, Apt 4",
-      "neighborhood": "Neighborhood / Intersections (Optional)",
+      "neighborhood": "Neighborhood / District (Optional)",
       "neighborhoodPlaceholder": "Vértiz Narvarte",
-      "city": "City *",
-      "state": "State / Province *",
+      "city": "City / Municipality *",
+      "state": "State / Region *",
       "statePlaceholder": "Mexico City",
-      "postalCode": "ZIP / Postal Code *",
+      "postalCode": "Postal / ZIP Code *",
       "country": "Country",
       "mexico": "Mexico (MX)",
       "cardNumber": "Card Number (Visa / Mastercard) *",
       "cardNumberPlaceholder": "4152 0000 0000 0000",
-      "cardHolderName": "Cardholder Full Name *",
-      "cardHolderPlaceholder": "Exactly as shown on the card",
-      "expiryMonth": "Exp. Month (MM) *",
+      "cardHolderName": "Cardholder Name *",
+      "cardHolderPlaceholder": "As printed on the card",
+      "expiryMonth": "Expiration Month (MM) *",
       "expiryMonthPlaceholder": "05",
-      "expiryYear": "Exp. Year (YY) *",
+      "expiryYear": "Expiration Year (YY) *",
       "expiryYearPlaceholder": "29",
       "cvv": "Security Code (CVV) *",
       "cvvPlaceholder": "•••"
     },
     "security": {
-      "note": "Secured Transaction"
+      "note": "Transaction processed under secure encryption standards"
     },
     "images": {
-      "etominAlt": "Etomin",
-      "securePaymentAlt": "Safe transaction"
+      "etominAlt": "Etomin Payment Gateway",
+      "securePaymentAlt": "Encrypted Payment"
     }
   },
   "customPlan": {
     "hero": {
-      "badge": "User Dashboard",
-      "title": "Add tailored quotation"
+      "badge": "Client Portal",
+      "title": "Enter custom quote"
     },
-    "imageAlt": "Orvex.art logo",
+    "imageAlt": "Orvex.art brand logo",
     "authorized": {
-      "title": "Payment verified",
-      "description": "Please provide the quotation number and the price previously agreed with our commercial team to proceed with your checkout."
+      "title": "Payment Verified",
+      "description": "Please enter your quotation ID and the total confirmed with our sales team to finalize your order."
     },
     "form": {
-      "badge": "Tailored checkout",
-      "title": "Quotation details",
-      "quoteLabel": "Quotation number",
-      "quotePlaceholder": "Ex. NEX-2026-001",
-      "amountLabel": "Agreed price",
+      "badge": "Custom Checkout",
+      "title": "Quote Information",
+      "quoteLabel": "Quotation ID",
+      "quotePlaceholder": "e.g., NEX-2026-001",
+      "amountLabel": "Agreed Amount",
       "amountPlaceholder": "0.00",
-      "taxNote": "+ Corresponding VAT will be added on the following screen."
+      "taxNote": "+ Applicable taxes will be calculated at checkout."
     },
     "buttons": {
-      "adding": "Placing in basket...",
-      "addToCart": "Add to basket"
+      "adding": "Adding to cart...",
+      "addToCart": "Add to Cart"
     },
     "errors": {
-      "quoteRequired": "You must provide a valid quotation number.",
-      "invalidAmount": "You must enter a valid financial amount."
+      "quoteRequired": "Please enter a valid quotation identifier.",
+      "invalidAmount": "Please enter a valid numeric amount."
     }
   },
   "header": {
     "logoAlt": "Orvex.art",
     "topbar": {
-      "address": "Boulevard Periférico Manuel Ávila Camacho 235, Mexico City",
-      "tagline": "Computers and gaming equipment"
+      "address": "Blvd. Manuel Ávila Camacho 235, Mexico City",
+      "tagline": "Computer Systems & Gaming Gear"
     },
     "search": {
-      "placeholderDesktop": "Search hardware, peripherals...",
-      "placeholderMobile": "Search products...",
+      "placeholderDesktop": "Search hardware, accessories...",
+      "placeholderMobile": "Search store...",
       "search": "Search",
-      "clear": "Clear search",
-      "open": "Open search",
-      "searching": "Searching products...",
-      "results": "{count} result(s)",
+      "clear": "Clear field",
+      "open": "Expand search",
+      "searching": "Locating products...",
+      "results": "{count} result(s) found",
       "clearButton": "Clear",
-      "noResults": "No products found for “{query}”."
+      "noResults": "No items matched “{query}”."
     },
     "cart": {
-      "label": "Cart"
+      "label": "My Basket"
     },
     "menu": {
-      "open": "Open menu"
+      "open": "Display menu"
     },
     "nav": {
-      "shipping": "Pay Your Shipping",
-      "contact": "Contact Us"
+      "shipping": "Pay Shipping Fee",
+      "contact": "Contact Support"
     }
   },
   "heroSlider": {
     "slides": {
       "1": {
-        "title": "More Speed",
-        "subtitle": "High-performance memory for demanding setups.",
-        "buttonText": "View Memory"
+        "title": "Maximum Speed",
+        "subtitle": "High-performance RAM engineered for demanding setups.",
+        "buttonText": "Explore Memory"
       },
       "2": {
-        "title": "ASUS TUF Gaming",
-        "subtitle": "Fast, smooth monitors built for competition.",
-        "buttonText": "View Monitors"
+        "title": "ASUS TUF Series",
+        "subtitle": "High-refresh monitors designed for competitive play.",
+        "buttonText": "Explore Displays"
       },
       "3": {
         "title": "RTX Series",
-        "subtitle": "Next-generation graphics power with NVIDIA GeForce.",
-        "buttonText": "View Graphics Cards"
+        "subtitle": "Next-gen GPU performance powered by NVIDIA GeForce.",
+        "buttonText": "Explore Graphics"
       }
     },
     "navigation": {
       "previous": "Previous",
       "next": "Next",
-      "goToSlide": "Go to slide {slide}"
+      "goToSlide": "Switch to slide {slide}"
     }
   },
   "newProducts": {
-    "title": "New Products",
-    "subtitle": "Recently added hardware and peripherals.",
+    "title": "New Arrivals",
+    "subtitle": "Recently added components and gear.",
     "navigation": {
       "previous": "Previous",
       "next": "Next"
     }
   },
   "categories": {
-    "title": "Categories",
-    "subtitle": "Components, peripherals, and specialized hardware."
+    "title": "Browse Categories",
+    "subtitle": "Components, gear, and specialized hardware."
   },
   "features": {
     "items": {
       "1": {
-        "title": "Best Prices",
-        "description": "Competitive prices on hardware and peripherals."
+        "title": "Competitive Pricing",
+        "description": "Great value on premium hardware and gear."
       },
       "2": {
-        "title": "Fast Delivery",
-        "description": "Fast and secure shipping across Mexico."
+        "title": "Fast Shipping",
+        "description": "Prompt and dependable delivery nationwide."
       },
       "3": {
         "title": "Buyer Protection",
-        "description": "Warranty and support with every purchase."
+        "description": "Full warranty coverage for peace of mind."
       },
       "4": {
         "title": "Live Support",
-        "description": "Support available to answer your questions."
+        "description": "Dedicated assistance available to resolve inquiries."
       }
     }
   },
   "footer": {
     "logoAlt": "Orvex.art",
-    "description": "Hardware, peripherals, and components focused on performance, aesthetics, and reliability. Secure shopping with real support.",
-    "featured": "Featured Products",
+    "description": "Hardware, components, and accessories focused on performance, aesthetics, and reliability. Safe shopping backed by direct support.",
+    "featured": "Top Products",
     "currency": "MXN",
-    "paymentMethodAlt": "Payment method",
+    "paymentMethodAlt": "Accepted payment options",
     "copyright": "All rights reserved.",
     "navigation": {
       "title": "Navigation",
       "home": "Home",
-      "store": "Store",
-      "shipping": "Pay for Shipping",
-      "contact": "Contact Us"
+      "store": "Shop",
+      "shipping": "Pay Shipping Fee",
+      "contact": "Contact Support"
     },
     "legal": {
-      "privacy": "Privacy Notice",
-      "terms": "Terms of Sale and Commercial Conditions",
-      "returns": "Returns and Warranty Policy"
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Sale & Business Conditions",
+      "returns": "Return Policy & Warranty Information"
     }
   },
   "categoryPage": {
     "breadcrumb": {
       "home": "Home"
     },
-    "availableProducts": "{count} products available",
+    "availableProducts": "{count} products found",
     "emptyState": {
-      "message": "There are no products in this category.",
-      "backHome": "Back to Home"
+      "message": "No products are currently available in this section.",
+      "backHome": "Return to Home"
     }
   },
   "productDetail": {
@@ -234,19 +234,19 @@
       "home": "Home"
     },
     "notFound": {
-      "title": "Product not found",
-      "backHome": "Back to home"
+      "title": "Item not found",
+      "backHome": "Return to home page"
     },
-    "priceLabel": "MXN + VAT",
-    "specifications": "Specifications",
+    "priceLabel": "MXN + Tax",
+    "specifications": "Technical Specs",
     "quantity": "Quantity",
-    "addToCart": "Add to cart"
+    "addToCart": "Add to Basket"
   },
   "contact": {
     "hero": {
-      "title": "Let's talk about your",
-      "subtitle": "next setup",
-      "description": "Our team can help you with quotes, compatibility, hardware, support, and business solutions."
+      "title": "Let's build your",
+      "subtitle": "custom build",
+      "description": "Our team is here to assist with estimates, component compatibility, enterprise purchasing, and technical support."
     },
     "cards": {
       "phone": {
@@ -256,69 +256,69 @@
         "title": "Email"
       },
       "address": {
-        "title": "Address"
+        "title": "Location"
       }
     },
     "form": {
-      "badge": "Direct Contact",
-      "title": "Send us a message",
-      "subtitle": "We will respond as soon as possible.",
+      "badge": "Direct Inquiry",
+      "title": "Send a Message",
+      "subtitle": "We will reply shortly.",
       "success": {
-        "title": "Message sent!",
-        "text": "We will get back to you as soon as possible."
+        "title": "Message Sent Successfully",
+        "text": "Our team will reach out as soon as possible."
       },
       "fields": {
         "name": {
-          "label": "Name",
-          "placeholder": "Your name"
+          "label": "First Name",
+          "placeholder": "Your first name"
         },
         "lastname": {
-          "label": "Last name",
+          "label": "Last Name",
           "placeholder": "Your last name"
         },
         "subject": {
           "label": "Subject",
-          "placeholder": "Message subject"
+          "placeholder": "Reason for inquiry"
         },
         "email": {
           "label": "Email",
-          "placeholder": "you@email.com"
+          "placeholder": "name@example.com"
         },
         "phone": {
-          "label": "Phone",
+          "label": "Phone Number",
           "placeholder": "+ 52 1 55 5359 9895"
         },
         "message": {
           "label": "Message",
-          "placeholder": "How can we help you?"
+          "placeholder": "How can our team assist you?"
         }
       },
-      "send": "Send message",
+      "send": "Send Message",
       "sending": "Sending..."
     },
     "alert": {
       "error": {
-        "title": "Error",
-        "defaultMessage": "An error occurred while sending the message"
+        "title": "Unable to Send",
+        "defaultMessage": "An error occurred while dispatching your message."
       }
     }
   },
   "ProductCard": {
-    "tax": "+ VAT",
+    "tax": "+ Tax",
     "price": "Price",
-    "added" : "Prodduct added to cart."
+    "added": "Product added to your cart."
   },
   "store": {
-    "title": "Product",
+    "title": "Hardware",
     "titleAccent": "Catalog",
-    "description": "Explore high-performance technological solutions. Integrated intelligent filtering.",
-    "searchPlaceholder": "Search by product name...",
+    "description": "Browse high-performance technology tailored for your demands. Smart filtering built-in.",
+    "searchPlaceholder": "Search by product name or keyword...",
     "allCategories": "All Categories",
-    "resultSingular": "PRODUCT FOUND",
-    "resultPlural": "PRODUCTS FOUND",
-    "noResultsTitle": "No results found",
-    "noResultsDescription": "There are no products that match your current search or filter criteria. Try resetting the fields or using a different term.",
-    "loading": "Loading catalog...",
+    "resultSingular": "ITEM FOUND",
+    "resultPlural": "ITEMS FOUND",
+    "noResultsTitle": "No match found",
+    "noResultsDescription": "No items match your active filters or search terms. Try clearing your filters or testing a different search term.",
+    "loading": "Fetching products...",
     "error": "An error occurred while loading the product catalog."
   }
 }
