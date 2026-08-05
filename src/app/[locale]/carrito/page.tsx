@@ -31,8 +31,8 @@ import { formatPrice } from "@/lib/price";
 
 const VALID_COUPONS = [
   { code: "DATNX10", discount: 0.1 },
-  { code: "DATNEXPRO15", discount: 0.15 },
-  { code: "DATNEXELITE20", discount: 0.2 },
+  { code: "ORVEXARTPRO15", discount: 0.15 },
+  { code: "ORVEXARTELITE20", discount: 0.2 },
 ];
 
 type Step = 1 | 2 | 3;

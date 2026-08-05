@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://datnex.com.mx"),
 
   title: {
-    default: "DATNEX | Equipos de Cómputo y Componentes de Alto Rendimiento",
-    template: "%s | DATNEX",
+    default: "Orvex.art | Equipos de Cómputo y Componentes de Alto Rendimiento",
+    template: "%s | Orvex.art",
   },
 
-  description: "DATNEX es tu tienda especializada en equipos de cómputo, gaming y componentes de alto rendimiento. PCs gamer, hardware premium, tarjetas gráficas, procesadores y más.",
+  description: "Orvex.art es tu tienda especializada en equipos de cómputo, gaming y componentes de alto rendimiento. PCs gamer, hardware premium, tarjetas gráficas, procesadores y más.",
 
   keywords: [
-    "DATNEX",
+    "Orvex.art",
     "pc gamer",
     "hardware",
     "componentes de computadora",
