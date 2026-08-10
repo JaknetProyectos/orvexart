@@ -3,10 +3,10 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const BRAND_NAME = "orvex.art";
-const BRAND_URL = "https://orvex.art";
-const SUPPORT_EMAIL = "asistencia@orvex.art";
-const BRAND_LOGO = "https://orvex.art/title.png";
+const BRAND_NAME = "orvexart.com.mx";
+const BRAND_URL = "https://orvexart.com.mx";
+const SUPPORT_EMAIL = "asistencia@orvexart.com.mx";
+const BRAND_LOGO = "https://orvexart.com.mx/title.png";
 
 function formatCurrency(value: number) {
   return new Intl.NumberFormat("es-MX", {

@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://orvex.art"),
+  metadataBase: new URL("https://orvexart.com.mx"),
 
   title: {
     default: "Orvex.art | Equipos de Cómputo y Componentes de Alto Rendimiento",

@@ -88,8 +88,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: t("cards.email.title"),
-      value: "asistencia@orvex.art",
-      href: "mailto:asistencia@orvex.art",
+      value: "asistencia@orvexart.com.mx",
+      href: "mailto:asistencia@orvexart.com.mx",
     },
     {
       icon: MapPin,
