@@ -320,5 +320,33 @@
     "noResultsDescription": "No encontramos artículos que correspondan con los filtros seleccionados. Intenta borrar los filtros o probar con un término diferente.",
     "loading": "Obteniendo artículos...",
     "error": "Error al cargar la lista de productos."
+  },
+  "Emails": {
+    "contactEmail": {
+      "business": {
+        "pretitle": "Nuevo contacto",
+        "title": "Nuevo mensaje recibido",
+        "subtitle": "Se ha enviado una solicitud desde el formulario de contacto web.",
+        "userName": "{nombre}",
+        "userDescription": "Un usuario solicita información o asistencia a través del portal.",
+        "labelName": "Nombre",
+        "labelEmail": "Correo",
+        "messageLabel": "Mensaje",
+        "replyButton": "Responder a {email}"
+      },
+      "user": {
+        "pretitle": "Mensaje recibido",
+        "title": "¡Gracias por contactarnos!",
+        "subtitle": "Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.",
+        "greeting": "Hola, {nombre}",
+        "description": "Tu mensaje ha sido registrado exitosamente en nuestro sistema. A continuación encontrarás un resumen de los datos enviados:",
+        "registeredEmail": "Correo registrado",
+        "webSite": "Sitio web",
+        "messageLabel": "Copia de tu mensaje",
+        "backButton": "Volver a {brandName}"
+      },
+      "subjectBusiness": "Nuevo mensaje web: {nombre}",
+      "subjectUser": "Hemos recibido tu mensaje - {brandName}"
+    }
   }
 }

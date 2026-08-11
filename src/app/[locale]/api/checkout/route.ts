@@ -1,3 +1,7 @@
+//const SUPPORT_EMAIL = "asistencia@orvexart.com.mx";
+
+const SENDER_EMAIL = "operar@vexora.com.mx";
+
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -5,13 +9,100 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const BRAND_NAME = "orvexart.com.mx";
 const BRAND_URL = "https://orvexart.com.mx";
-const SUPPORT_EMAIL = "asistencia@orvexart.com.mx";
+const SUPPORT_EMAIL = "operar@vexora.com.mx";
 const BRAND_LOGO = "https://orvexart.com.mx/title.png";
 
-function formatCurrency(value: number) {
-  return new Intl.NumberFormat("es-MX", {
-    style: "currency",
+type SupportedLocale = "es" | "en";
+
+// Diccionario de traducciones
+const translations = {
+  es: {
+    localeCode: "es-MX",
     currency: "MXN",
+    footerTagline: `${BRAND_NAME} · venta de equipo de cómputo y soluciones tecnológicas.`,
+    errorIncomplete: "Información de orden incompleta.",
+    errorGeneric: "Error al procesar la solicitud",
+    defaultProductDesc: "Equipo de cómputo con tecnología pensada para productividad y rendimiento.",
+    defaultNotes: "Sin notas",
+    defaultProductName: "Producto",
+    // Cliente
+    customerSubject: (orderId: string | number) => `Confirmación de compra #${orderId} - ${BRAND_NAME}`,
+    badgeCustomer: (orderId: string | number) => `Orden #${orderId}`,
+    customerTitle: "Compra confirmada",
+    customerSubtitle: "Tu pago fue aprobado correctamente. Ya estamos procesando tu orden y preparando los siguientes pasos.",
+    customerGreeting: (name: string) => `Gracias por tu compra${name ? `, ${name}` : ""}`,
+    customerPaymentSuccess: `Hemos recibido y verificado tu pago con éxito. Tu pedido ya está registrado en el sistema de ${BRAND_NAME}.`,
+    labelOrder: "Orden",
+    labelStatus: "Estado",
+    statusPaymentConfirmed: "Pago confirmado",
+    badgePurchasedProduct: "Producto adquirido",
+    labelQuantity: "Cantidad",
+    labelTotal: "Total",
+    labelTotalPaid: "Total pagado",
+    labelAssignedAddress: "Dirección de entrega",
+    // Admin / Negocio
+    businessSubject: (orderId: string | number) => `NUEVA COMPRA #${orderId}`,
+    badgeBusiness: (orderId: string | number) => `Orden #${orderId}`,
+    businessTitle: "Nueva compra procesada",
+    businessSubtitle: "Una orden nueva fue confirmada desde el sitio. Revisa los datos del cliente y el detalle del pago abajo.",
+    badgeEcommerce: "Orden Ecommerce",
+    businessProcessedTotal: (amountFormatted: string) => `${amountFormatted} procesados con éxito`,
+    businessDescription: "La compra quedó registrada correctamente. Este correo resume al cliente, la orden y el importe pagado.",
+    labelCustomer: "Cliente",
+    labelEmail: "Correo",
+    labelPhone: "Teléfono",
+    labelOrderNotes: "Notas de la orden",
+    labelAmountTotal: "Monto total",
+    labelCustomerAddress: "Dirección del cliente",
+    zipPrefix: "CP",
+  },
+  en: {
+    localeCode: "en-US",
+    currency: "USD",
+    footerTagline: `${BRAND_NAME} · computer equipment sales and technological solutions.`,
+    errorIncomplete: "Incomplete order details.",
+    errorGeneric: "Error processing request",
+    defaultProductDesc: "High-performance computing hardware built for productivity and reliability.",
+    defaultNotes: "No notes provided",
+    defaultProductName: "Product",
+    // Cliente
+    customerSubject: (orderId: string | number) => `Order Confirmation #${orderId} - ${BRAND_NAME}`,
+    badgeCustomer: (orderId: string | number) => `Order #${orderId}`,
+    customerTitle: "Order Confirmed",
+    customerSubtitle: "Your payment has been successfully approved. We are now processing your order and preparing the next steps.",
+    customerGreeting: (name: string) => `Thank you for your purchase${name ? `, ${name}` : ""}`,
+    customerPaymentSuccess: `We have successfully received and verified your payment. Your order is now registered in the ${BRAND_NAME} system.`,
+    labelOrder: "Order",
+    labelStatus: "Status",
+    statusPaymentConfirmed: "Payment confirmed",
+    badgePurchasedProduct: "Purchased item",
+    labelQuantity: "Quantity",
+    labelTotal: "Total",
+    labelTotalPaid: "Total paid",
+    labelAssignedAddress: "Shipping address",
+    // Admin / Negocio
+    businessSubject: (orderId: string | number) => `NEW ORDER #${orderId}`,
+    badgeBusiness: (orderId: string | number) => `Order #${orderId}`,
+    businessTitle: "New Order Processed",
+    businessSubtitle: "A new order was confirmed on the site. Review customer details and payment summary below.",
+    badgeEcommerce: "Ecommerce Order",
+    businessProcessedTotal: (amountFormatted: string) => `${amountFormatted} processed successfully`,
+    businessDescription: "The purchase has been logged successfully. This email summarizes customer details, order items, and total paid.",
+    labelCustomer: "Customer",
+    labelEmail: "Email",
+    labelPhone: "Phone",
+    labelOrderNotes: "Order notes",
+    labelAmountTotal: "Total amount",
+    labelCustomerAddress: "Customer address",
+    zipPrefix: "ZIP",
+  },
+};
+
+function formatCurrency(value: number, locale: SupportedLocale = "es", currencyOverride?: string) {
+  const t = translations[locale];
+  return new Intl.NumberFormat(t.localeCode, {
+    style: "currency",
+    currency: currencyOverride || (locale === "en" ? "USD" : "MXN"),
   }).format(value);
 }
 
@@ -24,14 +115,10 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#039;");
 }
 
-function formatMessage(value: string) {
-  return escapeHtml(value).replace(/\n/g, "<br />");
-}
-
-function shell(content: string) {
+function shell(content: string, lang: SupportedLocale = "es") {
   return `
     <!DOCTYPE html>
-    <html lang="es">
+    <html lang="${lang}">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -176,7 +263,8 @@ function bodyCardEnd() {
   `;
 }
 
-function footerBlock() {
+function footerBlock(locale: SupportedLocale = "es") {
+  const t = translations[locale];
   return `
     <tr>
       <td
@@ -208,7 +296,7 @@ function footerBlock() {
                   text-align:center;
                 "
               >
-                ${BRAND_NAME} · venta de equipo de cómputo y soluciones tecnológicas.
+                ${t.footerTagline}
               </p>
 
               <p
@@ -220,7 +308,7 @@ function footerBlock() {
                   text-align:center;
                 "
               >
-                © 2026 · ${BRAND_NAME}
+                © ${new Date().getFullYear()} · ${BRAND_NAME}
               </p>
 
               <div style="margin-top:20px; text-align:center;">
@@ -301,17 +389,18 @@ function infoGrid(items: { label: string; value: string; href?: string }[]) {
   `;
 }
 
-function productCardHTML(item: any) {
+function productCardHTML(item: any, locale: SupportedLocale = "es", currencyCode?: string) {
+  const t = translations[locale];
   const product = item.product || {};
   const qty = Number(item.quantity || 1);
   const unitPrice = Number(product.price || 0);
   const total = unitPrice * qty;
 
-  const productName = escapeHtml(product.name || "Producto");
+  const productName = escapeHtml(product.name || t.defaultProductName);
   const productDescription = escapeHtml(
     product.description ||
       product.specs?.[0] ||
-      "Equipo de cómputo con tecnología pensada para productividad y rendimiento."
+      t.defaultProductDesc
   );
   const productImage = String(product.image || "");
 
@@ -329,22 +418,28 @@ function productCardHTML(item: any) {
         background:#ffffff;
       "
     >
-      <tr>
-        <td>
-          <img
-            src="${escapeHtml(productImage)}"
-            alt="${productName}"
-            width="100%"
-            height="220"
-            style="
-              width:100%;
-              height:220px;
-              object-fit:cover;
-              display:block;
-            "
-          />
-        </td>
-      </tr>
+      ${
+        productImage
+          ? `
+          <tr>
+            <td>
+              <img
+                src="${escapeHtml(productImage)}"
+                alt="${productName}"
+                width="100%"
+                height="220"
+                style="
+                  width:100%;
+                  height:220px;
+                  object-fit:cover;
+                  display:block;
+                "
+              />
+            </td>
+          </tr>
+          `
+          : ""
+      }
 
       <tr>
         <td style="padding:24px 24px 22px 24px;">
@@ -362,7 +457,7 @@ function productCardHTML(item: any) {
               border-radius:4px;
             "
           >
-            Producto adquirido
+            ${t.badgePurchasedProduct}
           </div>
 
           <h3
@@ -402,7 +497,7 @@ function productCardHTML(item: any) {
                     font-weight:700;
                   "
                 >
-                  Cantidad
+                  ${t.labelQuantity}
                 </p>
 
                 <p
@@ -428,7 +523,7 @@ function productCardHTML(item: any) {
                     font-weight:700;
                   "
                 >
-                  Total
+                  ${t.labelTotal}
                 </p>
 
                 <p
@@ -440,7 +535,7 @@ function productCardHTML(item: any) {
                     letter-spacing:-0.03em;
                   "
                 >
-                  ${formatCurrency(total)}
+                  ${formatCurrency(total, locale, currencyCode)}
                 </p>
               </td>
             </tr>
@@ -455,35 +550,52 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const { orderId, amount, customer, items, metadata } = body;
+    const { orderId, amount, customer, items, metadata, locale = "es", currency } = body;
+
+    // Normalizar el idioma soportado (default: 'es')
+    const customerLocale: SupportedLocale = locale === "en" ? "en" : "es";
+    const tCust = translations[customerLocale];
+    const tBiz = translations.es; // Correo de administración interno en español
+
+    const currencyCode = currency || (customerLocale === "en" ? "USD" : "MXN");
 
     if (!orderId || !amount || !customer || !items || !items.length) {
       return NextResponse.json(
-        { error: "Información de orden incompleta." },
+        { error: tCust.errorIncomplete },
         { status: 400 }
       );
     }
 
-    const customerName = escapeHtml(customer.nombre || "");
-    const customerLastName = escapeHtml(customer.apellido || "");
+    const customerName = escapeHtml(customer.nombre || customer.firstName || "");
+    const customerLastName = escapeHtml(customer.apellido || customer.lastName || "");
     const customerEmail = escapeHtml(customer.email || "");
-    const customerPhone = escapeHtml(customer.telefono || "");
-    const customerAddress = escapeHtml(customer.direccion || "");
-    const customerAddress2 = customer.direccion2
-      ? `, ${escapeHtml(customer.direccion2)}`
+    const customerPhone = escapeHtml(customer.telefono || customer.phone || "");
+    const customerAddress = escapeHtml(customer.direccion || customer.address || "");
+    const customerAddress2 = customer.direccion2 || customer.address2
+      ? `, ${escapeHtml(customer.direccion2 || customer.address2)}`
       : "";
-    const customerCity = escapeHtml(customer.ciudad || "");
-    const customerState = escapeHtml(customer.estado || "");
-    const customerZip = escapeHtml(customer.cp || "");
-    const orderNote = escapeHtml(metadata?.notes || "Sin notas");
+    const customerCity = escapeHtml(customer.ciudad || customer.city || "");
+    const customerState = escapeHtml(customer.estado || customer.state || "");
+    const customerZip = escapeHtml(customer.cp || customer.zip || "");
+    const orderNoteCustomer = escapeHtml(metadata?.notes || tCust.defaultNotes);
+    const orderNoteBiz = escapeHtml(metadata?.notes || tBiz.defaultNotes);
 
-    const productsHTML = items.map(productCardHTML).join("");
+    const productsHTMLCustomer = items
+      .map((item: any) => productCardHTML(item, customerLocale, currencyCode))
+      .join("");
+      
+    const productsHTMLBusiness = items
+      .map((item: any) => productCardHTML(item, "es", currencyCode))
+      .join("");
 
+    // ==========================================
+    // HTML CLIENTE (En el idioma seleccionado)
+    // ==========================================
     const htmlCliente = shell(`
       ${topBanner(
-        `Orden #${escapeHtml(String(orderId))}`,
-        "Compra confirmada",
-        "Tu pago fue aprobado correctamente. Ya estamos procesando tu orden y preparando los siguientes pasos."
+        tCust.badgeCustomer(escapeHtml(String(orderId))),
+        tCust.customerTitle,
+        tCust.customerSubtitle
       )}
 
       ${bodyCardStart()}
@@ -506,7 +618,7 @@ export async function POST(req: Request) {
                   color:#0f172a;
                 "
               >
-                Gracias por tu compra, ${customerName}
+                ${tCust.customerGreeting(customerName)}
               </h2>
 
               <p
@@ -517,19 +629,19 @@ export async function POST(req: Request) {
                   color:#475569;
                 "
               >
-                Hemos recibido y verificado tu pago con éxito. Tu pedido ya está registrado en el sistema de ${BRAND_NAME}.
+                ${tCust.customerPaymentSuccess}
               </p>
 
               ${infoGrid([
-                { label: "Orden", value: `#${String(orderId)}` },
-                { label: "Estado", value: "Pago confirmado" },
+                { label: tCust.labelOrder, value: `#${String(orderId)}` },
+                { label: tCust.labelStatus, value: tCust.statusPaymentConfirmed },
               ])}
             </td>
           </tr>
 
           <tr>
             <td style="padding-top:24px;">
-              ${productsHTML}
+              ${productsHTMLCustomer}
             </td>
           </tr>
 
@@ -560,7 +672,7 @@ export async function POST(req: Request) {
                         text-transform:uppercase;
                       "
                     >
-                      Total pagado
+                      ${tCust.labelTotalPaid}
                     </p>
 
                     <p
@@ -573,7 +685,7 @@ export async function POST(req: Request) {
                         letter-spacing:-0.05em;
                       "
                     >
-                      ${formatCurrency(Number(amount))} MXN
+                      ${formatCurrency(Number(amount), customerLocale, currencyCode)} ${currencyCode}
                     </p>
                   </td>
                 </tr>
@@ -608,7 +720,7 @@ export async function POST(req: Request) {
                         letter-spacing:0.16em;
                       "
                     >
-                      Dirección asignada
+                      ${tCust.labelAssignedAddress}
                     </p>
 
                     <p
@@ -620,7 +732,7 @@ export async function POST(req: Request) {
                       "
                     >
                       ${customerAddress}${customerAddress2}<br>
-                      ${customerCity}, ${customerState}, CP ${customerZip}
+                      ${customerCity}, ${customerState}, ${tCust.zipPrefix} ${customerZip}
                     </p>
                   </td>
                 </tr>
@@ -630,14 +742,17 @@ export async function POST(req: Request) {
         </table>
       ${bodyCardEnd()}
 
-      ${footerBlock()}
-    `);
+      ${footerBlock(customerLocale)}
+    `, customerLocale);
 
+    // ==========================================
+    // HTML NEGOCIO / ADMIN (Siempre en Español)
+    // ==========================================
     const htmlNegocio = shell(`
       ${topBanner(
-        `Orden #${escapeHtml(String(orderId))}`,
-        "Nueva compra procesada",
-        "Una orden nueva fue confirmada desde el sitio. Revisa los datos del cliente y el detalle del pago abajo."
+        tBiz.badgeBusiness(escapeHtml(String(orderId))),
+        tBiz.businessTitle,
+        tBiz.businessSubtitle
       )}
 
       ${bodyCardStart()}
@@ -666,7 +781,7 @@ export async function POST(req: Request) {
                   border-radius:6px;
                 "
               >
-                Ecommerce order
+                ${tBiz.badgeEcommerce}
               </div>
 
               <h2
@@ -678,7 +793,7 @@ export async function POST(req: Request) {
                   color:#0f172a;
                 "
               >
-                ${formatCurrency(Number(amount))} procesados con éxito
+                ${tBiz.businessProcessedTotal(formatCurrency(Number(amount), "es", currencyCode))}
               </h2>
 
               <p
@@ -689,20 +804,20 @@ export async function POST(req: Request) {
                   color:#475569;
                 "
               >
-                La compra quedó registrada correctamente. Este correo resume al cliente, la orden y el importe pagado.
+                ${tBiz.businessDescription}
               </p>
 
               ${infoGrid([
-                { label: "Cliente", value: `${customerName} ${customerLastName}`.trim() },
-                { label: "Correo", value: customerEmail, href: `mailto:${customerEmail}` },
-                { label: "Teléfono", value: customerPhone },
+                { label: tBiz.labelCustomer, value: `${customerName} ${customerLastName}`.trim() },
+                { label: tBiz.labelEmail, value: customerEmail, href: `mailto:${customerEmail}` },
+                { label: tBiz.labelPhone, value: customerPhone },
               ])}
             </td>
           </tr>
 
           <tr>
             <td style="padding-top:24px;">
-              ${productsHTML}
+              ${productsHTMLBusiness}
             </td>
           </tr>
 
@@ -734,7 +849,7 @@ export async function POST(req: Request) {
                         letter-spacing:0.16em;
                       "
                     >
-                      Notas de la orden
+                      ${tBiz.labelOrderNotes}
                     </p>
 
                     <p
@@ -745,7 +860,7 @@ export async function POST(req: Request) {
                         color:#1e293b;
                       "
                     >
-                      ${orderNote}
+                      ${orderNoteBiz}
                     </p>
                   </td>
                 </tr>
@@ -779,7 +894,7 @@ export async function POST(req: Request) {
                         letter-spacing:0.16em;
                       "
                     >
-                      Monto total
+                      ${tBiz.labelAmountTotal}
                     </p>
 
                     <p
@@ -792,7 +907,7 @@ export async function POST(req: Request) {
                         letter-spacing:-0.05em;
                       "
                     >
-                      ${formatCurrency(Number(amount))}
+                      ${formatCurrency(Number(amount), "es", currencyCode)}
                     </p>
                   </td>
                 </tr>
@@ -827,7 +942,7 @@ export async function POST(req: Request) {
                         letter-spacing:0.16em;
                       "
                     >
-                      Dirección del cliente
+                      ${tBiz.labelCustomerAddress}
                     </p>
 
                     <p
@@ -839,7 +954,7 @@ export async function POST(req: Request) {
                       "
                     >
                       ${customerAddress}${customerAddress2}<br>
-                      ${customerCity}, ${customerState}, CP ${customerZip}
+                      ${customerCity}, ${customerState}, ${tBiz.zipPrefix} ${customerZip}
                     </p>
                   </td>
                 </tr>
@@ -849,21 +964,24 @@ export async function POST(req: Request) {
         </table>
       ${bodyCardEnd()}
 
-      ${footerBlock()}
-    `);
+      ${footerBlock("es")}
+    `, "es");
 
+    // ==========================================
+    // ENVÍO DE CORREOS
+    // ==========================================
     await Promise.all([
       resend.emails.send({
         from: `Orvex.art <${SUPPORT_EMAIL}>`,
         to: [customer.email],
-        subject: `Confirmación de compra #${orderId} - ${BRAND_NAME}`,
+        subject: tCust.customerSubject(orderId),
         html: htmlCliente,
       }),
       resend.emails.send({
         from: `Orvex.art <${SUPPORT_EMAIL}>`,
         to: [SUPPORT_EMAIL],
         replyTo: customer.email,
-        subject: `NUEVA COMPRA #${orderId}`,
+        subject: tBiz.businessSubject(orderId),
         html: htmlNegocio,
       }),
     ]);

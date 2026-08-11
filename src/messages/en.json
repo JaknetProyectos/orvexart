@@ -139,7 +139,7 @@
       "open": "Display menu"
     },
     "nav": {
-      "shipping": "Pay Shipping Fee",
+      "shipping": "Pay Shipping",
       "contact": "Contact Support"
     }
   },
@@ -210,7 +210,7 @@
       "title": "Navigation",
       "home": "Home",
       "store": "Shop",
-      "shipping": "Pay Shipping Fee",
+      "shipping": "Pay Shipping",
       "contact": "Contact Support"
     },
     "legal": {
@@ -320,5 +320,33 @@
     "noResultsDescription": "No items match your active filters or search terms. Try clearing your filters or testing a different search term.",
     "loading": "Fetching products...",
     "error": "An error occurred while loading the product catalog."
+  },
+  "Emails": {
+    "contactEmail": {
+      "business": {
+        "pretitle": "New contact",
+        "title": "New message received",
+        "subtitle": "A request has been sent via the website contact form.",
+        "userName": "{nombre}",
+        "userDescription": "A user is requesting information or assistance through the portal.",
+        "labelName": "Name",
+        "labelEmail": "Email",
+        "messageLabel": "Message",
+        "replyButton": "Reply to {email}"
+      },
+      "user": {
+        "pretitle": "Message received",
+        "title": "Thanks for contacting us!",
+        "subtitle": "We have received your message and will get back to you as soon as possible.",
+        "greeting": "Hello, {nombre}",
+        "description": "Your message has been successfully registered in our system. Below you will find a summary of the data sent:",
+        "registeredEmail": "Registered email",
+        "webSite": "Website",
+        "messageLabel": "Copy of your message",
+        "backButton": "Return to {brandName}"
+      },
+      "subjectBusiness": "New web message: {nombre}",
+      "subjectUser": "We have received your message - {brandName}"
+    }
   }
 }
