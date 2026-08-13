@@ -1,6 +1,6 @@
 //const SUPPORT_EMAIL = "asistencia@orvexart.com.mx";
 
-const SENDER_EMAIL = "operar@vexora.com.mx";
+const SENDER_EMAIL = "asistencia@orvexart.com.mx";
 
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
@@ -9,7 +9,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const BRAND_NAME = "orvexart.com.mx";
 const BRAND_URL = "https://orvexart.com.mx";
-const SUPPORT_EMAIL = "operar@vexora.com.mx";
+const SUPPORT_EMAIL = "asistencia@orvexart.com.mx";
 const BRAND_LOGO = "https://orvexart.com.mx/title.png";
 
 type SupportedLocale = "es" | "en";

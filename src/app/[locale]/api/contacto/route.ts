@@ -6,7 +6,7 @@ import { getTranslations } from "next-intl/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const SUPPORT_EMAIL = "operar@vexora.com.mx";
+const SUPPORT_EMAIL = "asistencia@orvexart.com.mx";
 const BRAND_NAME = "orvexart.com.mx";
 const BRAND_URL = "https://orvexart.com.mx";
 const BRAND_LOGO = "https://orvexart.com.mx/title.png";
