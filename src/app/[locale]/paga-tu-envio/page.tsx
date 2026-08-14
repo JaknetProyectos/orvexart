@@ -57,7 +57,7 @@ export default function CustomProductPage() {
 
     addItem(
       {
-        image: "/logo-dark.png",
+        image: "https://orvexart.com.mx/logo-dark.png",
         category: "custom",
         id: `custom-quote-${quoteNumber.trim().toLowerCase()}`,
         name: `Custom - ${folioUpper}`,
