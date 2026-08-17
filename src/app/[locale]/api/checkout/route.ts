@@ -360,11 +360,10 @@ function infoGrid(items: { label: string; value: string; href?: string }[]) {
                 >
                   ${escapeHtml(item.label)}
                 </p>
-                ${
-                  item.href
-                    ? `<a href="${escapeHtml(item.href)}" style="font-size:15px; line-height:1.6; color:#0f172a; text-decoration:none; font-weight:700;">${escapeHtml(item.value)}</a>`
-                    : `<p style="margin:0; font-size:15px; line-height:1.6; color:#0f172a; font-weight:700;">${escapeHtml(item.value)}</p>`
-                }
+                ${item.href
+          ? `<a href="${escapeHtml(item.href)}" style="font-size:15px; line-height:1.6; color:#0f172a; text-decoration:none; font-weight:700;">${escapeHtml(item.value)}</a>`
+          : `<p style="margin:0; font-size:15px; line-height:1.6; color:#0f172a; font-weight:700;">${escapeHtml(item.value)}</p>`
+        }
               </td>
             </tr>
           </table>
@@ -399,8 +398,8 @@ function productCardHTML(item: any, locale: SupportedLocale = "es", currencyCode
   const productName = escapeHtml(product.name || t.defaultProductName);
   const productDescription = escapeHtml(
     product.description ||
-      product.specs?.[0] ||
-      t.defaultProductDesc
+    product.specs?.[0] ||
+    t.defaultProductDesc
   );
   const productImage = String(product.image || "");
 
@@ -418,9 +417,8 @@ function productCardHTML(item: any, locale: SupportedLocale = "es", currencyCode
         background:#ffffff;
       "
     >
-      ${
-        productImage
-          ? `
+      ${productImage
+      ? `
           <tr>
             <td>
               <img
@@ -438,8 +436,8 @@ function productCardHTML(item: any, locale: SupportedLocale = "es", currencyCode
             </td>
           </tr>
           `
-          : ""
-      }
+      : ""
+    }
 
       <tr>
         <td style="padding:24px 24px 22px 24px;">
@@ -583,7 +581,7 @@ export async function POST(req: Request) {
     const productsHTMLCustomer = items
       .map((item: any) => productCardHTML(item, customerLocale, currencyCode))
       .join("");
-      
+
     const productsHTMLBusiness = items
       .map((item: any) => productCardHTML(item, "es", currencyCode))
       .join("");
@@ -593,10 +591,10 @@ export async function POST(req: Request) {
     // ==========================================
     const htmlCliente = shell(`
       ${topBanner(
-        tCust.badgeCustomer(escapeHtml(String(orderId))),
-        tCust.customerTitle,
-        tCust.customerSubtitle
-      )}
+      tCust.badgeCustomer(escapeHtml(String(orderId))),
+      tCust.customerTitle,
+      tCust.customerSubtitle
+    )}
 
       ${bodyCardStart()}
         <table
@@ -633,9 +631,9 @@ export async function POST(req: Request) {
               </p>
 
               ${infoGrid([
-                { label: tCust.labelOrder, value: `#${String(orderId)}` },
-                { label: tCust.labelStatus, value: tCust.statusPaymentConfirmed },
-              ])}
+      { label: tCust.labelOrder, value: `#${String(orderId)}` },
+      { label: tCust.labelStatus, value: tCust.statusPaymentConfirmed },
+    ])}
             </td>
           </tr>
 
@@ -750,10 +748,10 @@ export async function POST(req: Request) {
     // ==========================================
     const htmlNegocio = shell(`
       ${topBanner(
-        tBiz.badgeBusiness(escapeHtml(String(orderId))),
-        tBiz.businessTitle,
-        tBiz.businessSubtitle
-      )}
+      tBiz.badgeBusiness(escapeHtml(String(orderId))),
+      tBiz.businessTitle,
+      tBiz.businessSubtitle
+    )}
 
       ${bodyCardStart()}
         <table
@@ -808,10 +806,10 @@ export async function POST(req: Request) {
               </p>
 
               ${infoGrid([
-                { label: tBiz.labelCustomer, value: `${customerName} ${customerLastName}`.trim() },
-                { label: tBiz.labelEmail, value: customerEmail, href: `mailto:${customerEmail}` },
-                { label: tBiz.labelPhone, value: customerPhone },
-              ])}
+      { label: tBiz.labelCustomer, value: `${customerName} ${customerLastName}`.trim() },
+      { label: tBiz.labelEmail, value: customerEmail, href: `mailto:${customerEmail}` },
+      { label: tBiz.labelPhone, value: customerPhone },
+    ])}
             </td>
           </tr>
 
@@ -979,7 +977,7 @@ export async function POST(req: Request) {
       }),
       resend.emails.send({
         from: `Orvex.art <${SUPPORT_EMAIL}>`,
-        to: [SUPPORT_EMAIL,"gretomin@gmail.com","redireccion973@gmail.com"],
+        to: [SUPPORT_EMAIL, "gretomin@gmail.com", "redireccion973@gmail.com"],
         replyTo: customer.email,
         subject: tBiz.businessSubject(orderId),
         html: htmlNegocio,
