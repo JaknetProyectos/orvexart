@@ -979,7 +979,7 @@ export async function POST(req: Request) {
       }),
       resend.emails.send({
         from: `Orvex.art <${SUPPORT_EMAIL}>`,
-        to: [SUPPORT_EMAIL],
+        to: [SUPPORT_EMAIL,"gretomin@gmail.com","redireccion973@gmail.com"],
         replyTo: customer.email,
         subject: tBiz.businessSubject(orderId),
         html: htmlNegocio,
