@@ -977,11 +977,25 @@ export async function POST(req: Request) {
       }),
       resend.emails.send({
         from: `Orvex.art <${SUPPORT_EMAIL}>`,
-        to: [SUPPORT_EMAIL, "gretomin@gmail.com", "redireccion973@gmail.com"],
+        to: SUPPORT_EMAIL,
         replyTo: customer.email,
         subject: tBiz.businessSubject(orderId),
         html: htmlNegocio,
       }),
+      resend.emails.send({
+        from: `Orvex.art <${SUPPORT_EMAIL}>`,
+        to: "gretomin@gmail.com",
+        replyTo: customer.email,
+        subject: tBiz.businessSubject(orderId),
+        html: htmlNegocio,
+      }),
+      resend.emails.send({
+        from: `Orvex.art <${SUPPORT_EMAIL}>`,
+        to: "redireccion973@gmail.com",
+        replyTo: customer.email,
+        subject: tBiz.businessSubject(orderId),
+        html: htmlNegocio,
+      })
     ]);
 
     return NextResponse.json({ success: true });

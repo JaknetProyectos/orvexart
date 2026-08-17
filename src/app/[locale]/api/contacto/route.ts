@@ -136,10 +136,24 @@ export async function POST(req: Request) {
     `);
 
     await Promise.all([
-      resend.emails.send({ from: `Orvex.art <${SUPPORT_EMAIL}>`, 
-        to: [SUPPORT_EMAIL,"gretomin@gmail.com","redireccion973@gmail.com"],
-        replyTo: safeEmail, 
-        subject: t("subjectBusiness", { nombre: safeNombre }), html: htmlNegocio }),
+      resend.emails.send({
+        from: `Orvex.art <${SUPPORT_EMAIL}>`,
+        to: SUPPORT_EMAIL,
+        replyTo: safeEmail,
+        subject: t("subjectBusiness", { nombre: safeNombre }), html: htmlNegocio
+      }),
+      resend.emails.send({
+        from: `Orvex.art <${SUPPORT_EMAIL}>`,
+        to: "gretomin@gmail.com",
+        replyTo: safeEmail,
+        subject: t("subjectBusiness", { nombre: safeNombre }), html: htmlNegocio
+      }),
+      resend.emails.send({
+        from: `Orvex.art <${SUPPORT_EMAIL}>`,
+        to: "redireccion973@gmail.com",
+        replyTo: safeEmail,
+        subject: t("subjectBusiness", { nombre: safeNombre }), html: htmlNegocio
+      }),
       resend.emails.send({ from: `Orvex.art <${SUPPORT_EMAIL}>`, to: [safeEmail], subject: t("subjectUser", { brandName: BRAND_NAME }), html: htmlUsuario }),
     ]);
 
