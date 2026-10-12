@@ -724,7 +724,7 @@ export default function CarritoCheckoutPage() {
 
                   <div className="flex items-center justify-center rounded-2xl border border-slate-100 bg-slate-50 p-4">
                     <Image
-                      src="/etomin.png"
+                      src="/keycop.webp"
                       alt={t("images.securePaymentAlt")}
                       width={150}
                       height={20}
