@@ -1,4 +1,27 @@
 {
+  "confirmationPage": {
+    "loading": "Cargando detalles de la transacción...",
+    "status": {
+      "approved": {
+        "title": "¡Pago Confirmado!",
+        "description": "Tu transacción se ha completado con éxito. Hemos enviado el recibo a tu correo electrónico."
+      },
+      "pending": {
+        "title": "Procesando Autenticación",
+        "description": "Tu pago está en proceso de verificación por parte del banco emisor."
+      },
+      "failed": {
+        "title": "Pago No Realizado",
+        "description": "Hubo un inconveniente al procesar tu pago. Por favor intenta nuevamente."
+      }
+    },
+    "details": {
+      "statusLabel": "Estado",
+      "referenceLabel": "Referencia",
+      "totalLabel": "Total"
+    },
+    "backToStore": "Volver a la Tienda"
+  },
   "cartPage": {
     "breadcrumb": {
       "home": "Página Principal",

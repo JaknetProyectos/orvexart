@@ -26,7 +26,7 @@ import { useLocale, useTranslations } from "next-intl";
 
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
-import { processEtominPayment } from "@/lib/payment";
+import { PaymentData, processKeycopPayment } from "@/lib/payment";
 import { formatPrice } from "@/lib/price";
 
 const VALID_COUPONS = [
@@ -47,7 +47,7 @@ function CardShell({
   return (
     <div className="group relative overflow-hidden rounded-[1.85rem] p-[2px] shadow-lg transition-all duration-500 ">
       {/* Animated RGB Glow */}
-      
+
 
       {/* White Card Inner */}
       <div
@@ -207,10 +207,12 @@ export default function CarritoCheckoutPage() {
     setErrorMessage("");
 
     const uniqueOrderId = `MC-${Date.now()}`;
+    const confirmationRedirectUrl = `${window.location.origin}/confirmacion?reference=${uniqueOrderId}&state=APPROVED`;
 
-    const paymentPayload = {
+    const paymentPayload: PaymentData = {
       amount: Number(grandTotal.toFixed(2)),
       orderId: uniqueOrderId,
+      redirectUrl: confirmationRedirectUrl,
       cardData: {
         number: formData.cardNumber.replace(/\s/g, ""),
         name: formData.cardName.trim(),
@@ -239,7 +241,13 @@ export default function CarritoCheckoutPage() {
     };
 
     try {
-      const response = await processEtominPayment(paymentPayload);
+      const response = await processKeycopPayment(paymentPayload);
+
+      // 3. Redirección y autenticación
+      if (response.needsRedirect && response.redirectUrl) {
+        window.location.href = response.redirectUrl;
+        return;
+      }
 
       if (response.success) {
         setSuccessData(response.data);
@@ -266,6 +274,10 @@ export default function CarritoCheckoutPage() {
 
         clearCart();
         setStep(3);
+
+        // 5. Bye carrito, redirección al url de confirmación
+        const successUrl = `/confirmacion?status=${response.status}&reference=${response.reference}&transactionId=${response.data?.transactionId || response.orderId}&amount=${paymentPayload.amount}`;
+        window.location.href = successUrl;
       } else {
         setErrorMessage(response.error || t("errors.declined"));
         console.log(response.error)
@@ -366,8 +378,8 @@ export default function CarritoCheckoutPage() {
           <div className="flex items-center gap-3">
             <div
               className={`h-2.5 w-2.5 rounded-full transition-colors duration-300 ${step >= 1
-                  ? "bg-gradient-to-r from-purple-400 to-pink-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"
-                  : "bg-purple-900"
+                ? "bg-gradient-to-r from-purple-400 to-pink-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"
+                : "bg-purple-900"
                 }`}
             />
             <div
@@ -376,8 +388,8 @@ export default function CarritoCheckoutPage() {
             />
             <div
               className={`h-2.5 w-2.5 rounded-full transition-colors duration-300 ${step >= 2
-                  ? "bg-gradient-to-r from-pink-500 to-indigo-500 shadow-[0_0_10px_rgba(236,72,153,0.5)]"
-                  : "bg-purple-900"
+                ? "bg-gradient-to-r from-pink-500 to-indigo-500 shadow-[0_0_10px_rgba(236,72,153,0.5)]"
+                : "bg-purple-900"
                 }`}
             />
           </div>

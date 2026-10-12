@@ -1,4 +1,27 @@
 {
+  "confirmationPage": {
+    "loading": "Loading transaction details...",
+    "status": {
+      "approved": {
+        "title": "Payment Confirmed!",
+        "description": "Your transaction was completed successfully. We have sent the receipt to your email."
+      },
+      "pending": {
+        "title": "Authentication Pending",
+        "description": "Your payment is currently being verified by the issuing bank."
+      },
+      "failed": {
+        "title": "Payment Failed",
+        "description": "There was an issue processing your payment. Please try again."
+      }
+    },
+    "details": {
+      "statusLabel": "Status",
+      "referenceLabel": "Reference",
+      "totalLabel": "Total"
+    },
+    "backToStore": "Back to Store"
+  },
   "cartPage": {
     "breadcrumb": {
       "home": "Main Page",
